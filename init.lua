@@ -21,8 +21,7 @@ local uw_cave_blend = 128		-- Cave blend distance near YMIN, YMAX
 
 --[[ Nodes ]]
 -------------------------------------------------------------------------------
-local tint = "#B2222299"
---local tint = "#8A070799"
+local tint = "#70000099"
 
 core.register_node("uw:stone", {
 	description = "Underworld Stone",
@@ -103,7 +102,7 @@ if core.get_modpath("lib_xconnected") then
 		material = "uw:stone"
 	})
 else
-	local fence_texture = "default_fence_overlay.png^(default_stone.png^[colorize:#8A070799)^default_fence_overlay.png^[makealpha:255,126,126"
+	local fence_texture = "default_fence_overlay.png^(default_stone.png^[colorize:"..tint..")^default_fence_overlay.png^[makealpha:255,126,126"
 	core.register_node("uw:fence_uw", {
 		description = "Underworld Stone Fence",
 		drawtype = "fencelike",
