@@ -21,9 +21,12 @@ local uw_cave_blend = 128		-- Cave blend distance near YMIN, YMAX
 
 --[[ Nodes ]]
 -------------------------------------------------------------------------------
+local tint = "#B2222299"
+--local tint = "#8A070799"
+
 core.register_node("uw:stone", {
 	description = "Underworld Stone",
-	tiles = {"default_stone.png^[colorize:#8A070799"},
+	tiles = {"default_stone.png^[colorize:"..tint},
 	groups = {underworld=1, stone=1, cracky=3, level=3},
 	is_ground_content = true,
 	sounds = default.node_sound_stone_defaults(),
@@ -32,7 +35,7 @@ core.register_node("uw:stone", {
 
 core.register_node("uw:stone_brick", {
 	description = "Underworld Stone Brick",
-	tiles = {"default_stone_brick.png^[colorize:#8A070799"},
+	tiles = {"default_stone_brick.png^[colorize:"..tint},
 	groups = {underworld=1, stone=1, cracky=2, level=3},
 	is_ground_content = true,
 	sounds = default.node_sound_stone_defaults()
@@ -40,7 +43,7 @@ core.register_node("uw:stone_brick", {
 
 core.register_node("uw:sand", {
 	description = "Underworld Sand",
-	tiles = {"default_sand.png^[colorize:#8A070799"},
+	tiles = {"default_sand.png^[colorize:"..tint},
 	groups = {underworld=1, sand=1, crumbly=3, level=3, falling_node=1},
 	is_ground_content = true,
 	sounds = default.node_sound_sand_defaults()
@@ -58,7 +61,7 @@ core.register_node("uw:glowstone", {
 
 core.register_node("uw:bedrock", {
 	description = "Underworld Bedrock",
-	tiles = {"bedrock_bedrock.png^[colorize:#8A070799"},
+	tiles = {"uw_bedrock.png^[colorize:"..tint},
 	groups = {underworld=1, stone=1, immortal=1, not_in_creative_inventory=0},
 	sounds = {footstep = {name = "uw_bedrock_step", gain = 1}},
 	is_ground_content = false,
@@ -71,7 +74,7 @@ core.register_node("uw:bedrock", {
 
 core.register_node("uw:deepstone", {
 	description = "Underworld Deepstone",
-	tiles = {"bedrock_deepstone.png^[colorize:#8A070799"},
+	tiles = {"uw_deepstone.png^[colorize:"..tint},
 	groups = {underworld=1, stone=1, cracky=3, level=4},
 	sounds = {footstep = {name = "uw_bedrock_step", gain = 1}},
 	is_ground_content = false,
@@ -80,7 +83,7 @@ core.register_node("uw:deepstone", {
 
 stairs.register_stair_and_slab("uw_stone_brick", "uw:stone_brick",
 		{underworld=1, stone=1, cracky=2, level=3},
-		{"default_stone_brick.png^[colorize:#8A070799"},
+		{"default_stone_brick.png^[colorize:"..tint},
 		"Underworld Stone Brick Stair",
 		"Underworld Stone Brick Slab",
 		default.node_sound_stone_defaults()
@@ -89,13 +92,13 @@ stairs.register_stair_and_slab("uw_stone_brick", "uw:stone_brick",
 if core.get_modpath("lib_xconnected") then
 	lib_xconnected.register("uw:fence_uw_stone", "fence", {
 		description = "Underworld Stone",
-		texture = "default_stone.png^[colorize:#8A070799",
+		texture = "default_stone.png^[colorize:"..tint,
 		groups = {underworld=1, stone=1, cracky=3, level=3, oddly_breakable_by_hand=2, flammable=3},
 		material = "uw:stone"
 	})
 	lib_xconnected.register("uw:wall_uw_stone", "wall", {
 		description = "Underworld Stone",
-		texture = "default_stone.png^[colorize:#8A070799",
+		texture = "default_stone.png^[colorize:"..tint,
 		groups = {underworld=1, stone=1, cracky=3, level=3, flammable=3},
 		material = "uw:stone"
 	})
@@ -104,7 +107,7 @@ else
 	core.register_node("uw:fence_uw", {
 		description = "Underworld Stone Fence",
 		drawtype = "fencelike",
-		tiles = {"default_stone.png^[colorize:#8A070799"},
+		tiles = {"default_stone.png^[colorize:"..tint},
 		inventory_image = fence_texture,
 		wield_image = fence_texture,
 		paramtype = "light",
